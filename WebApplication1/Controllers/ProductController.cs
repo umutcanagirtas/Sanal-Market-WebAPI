@@ -26,7 +26,6 @@ namespace WebApplication1.Controllers
             {
                 var sql = "SELECT * FROM [dbo].[tbl_Urun] WHERE [UrunAd] LIKE @n";
                 List<Urun> data = con.Query<Urun>(sql,new { n="%"+ parametre.Trim()+"%"}).ToList();
-                var can = "Ürün Yok";
                 if (data != null)
                     return data;
                 else
